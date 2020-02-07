@@ -17,7 +17,7 @@ export class ManagerUserComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getAllUsers().subscribe(users => {
-      this.users = users;
+      this.users = users;   
     })
   }
 

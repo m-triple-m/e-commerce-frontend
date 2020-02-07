@@ -72,6 +72,6 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MyDialogComponent],
+  // entryComponents: [MyDialogComponent],
 })
 export class AppModule { }
