@@ -1,0 +1,20 @@
+<mat-drawer-container>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <div class="container side-container" style="padding: 0px;">
+          <div class="card">
+              <div class="card-body" id="side-card">
+                <div *ngFor="let item of items" style="padding: 0px 10px 10px 0px;">
+                    <p>{{item}}</p>
+                    <hr>
+                </div>
+              </div>
+          </div>
+      </div>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <app-manager-user></app-manager-user>
+      <app-add-product></app-add-product>
+    </div>
+  
+  </mat-drawer-container>

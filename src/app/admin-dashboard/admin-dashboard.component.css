@@ -1,0 +1,7 @@
+.side-container mat-drawer-container{
+    height: 100%;
+} 
+
+#side-card{
+    padding-top: 7rem;
+}

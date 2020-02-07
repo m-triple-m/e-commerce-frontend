@@ -1,0 +1,26 @@
+.card{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.185);
+}
+
+mat-form-field{
+    width: 100%;
+}
+mat-card{
+    margin-top: 25%;
+}
+
+#head-text{
+    text-align: center;
+}
+
+.link:focus{
+    outline: none;
+}
+
+.link{
+    cursor: pointer;
+}
+
+.mat-expanded{
+    background-color: aqua ;
+}

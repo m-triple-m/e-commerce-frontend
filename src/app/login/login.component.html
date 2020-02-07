@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-sm-5">
+                <mat-card>
+                    <p class="text-muted h5 text-center">Logo here</p>
+                    <p class="h4 text-center mt-3">Log In to Continue</p>
+                    <mat-card-content style="padding: 20px;">
+                        <form [formGroup]="loginForm" (submit) = "userLogin(loginForm.value)">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Username" formControlName="username">
+                                <!-- <mat-hint>username required</mat-hint> -->
+                                <mat-error *ngIf="getControl('username')">Username Required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="mt-3">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" formControlName="password">
+                                <!-- <mat-hint>password required</mat-hint> -->
+                                <mat-error *ngIf="getControl('password')">Password Required</mat-error>
+                            </mat-form-field>
+                            <p class="h6 float-left link" [routerLink]="['/forgot']" routerLinkActive="router-link-active" >Forgot Password?</p>
+                            <p class="h6 float-right link" [routerLink]="['/register']" routerLinkActive="router-link-active" >Create Account</p>
+                            <button mat-raised-button class="mt-4 btn-block" color="primary">Sign Up</button>
+                        </form>
+                        <mat-checkbox class="mt-5" [(ngModel)]="remember_user" color="primary">Remember Me</mat-checkbox>
+                    </mat-card-content>
+                </mat-card>
+            
+        </div>
+    </div>
+</div>
+<mat-expansion-panel [class.active] = "selected">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Age">
+    </mat-form-field>
+  </mat-expansion-panel>

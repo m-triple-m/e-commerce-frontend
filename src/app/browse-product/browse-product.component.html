@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <button class="btn btn-primary ml-auto">Invite User</button>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="input-group col-md-2 ml-auto">
+                <input class="form-control" #searchname>
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" (click)="searchByName(searchname.value)"><fa-icon [icon] ="search"></fa-icon></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 browser">
+    <div class="card ml-auto">
+        <div class="card-body">
+            <div class="listing" *ngFor="let product of products">
+                <div class="row item">
+                    <div class="col-md-3">{{product.name}}</div>
+                    <div class="col-md-3">{{product.price}}</div>
+                    <div class="col-md-3">{{product.category}}</div>
+                    <div class="col-md-3"><img [src]="getImg(product.image)" class="img-fluid card-img-top" width="100px"></div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

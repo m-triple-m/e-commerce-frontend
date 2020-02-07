@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form [formGroup]="productForm" (submit) = "formSubmit(productForm.value)">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <p class="h4 text-center text-light">Add new Product</p>
+                    </div>
+                    <div class="card-body">
+                        <input type="file" (change)="onFileChanged($event)" #fileInput>
+                        
+                        <mat-form-field>
+                            <input matInput placeholder="Name" formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Price" formControlName="price" type="number">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Category" formControlName="category">
+                        </mat-form-field>
+                        
+                        <button class="btn btn-outline-primary mt-5 btn-block">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

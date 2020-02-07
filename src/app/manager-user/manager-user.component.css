@@ -1,0 +1,11 @@
+.item{
+    padding: 10px;
+}
+
+.card-body{
+    padding: 20px;
+}
+
+.card{
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.082);
+}
