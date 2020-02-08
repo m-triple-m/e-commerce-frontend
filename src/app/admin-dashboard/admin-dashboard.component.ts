@@ -9,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  @ViewChild("drawer", {static: false}) drawer: MatSidenav;
+  @ViewChild("drawer") drawer: MatSidenav;
   items = ['Manage Order','Manage Users','View Products','View Registrations','Manage Admins','cyfcyvewcuye','cyfcyvewcuye','cyfcyvewcuye','cyfcyvewcuye' ]
   constructor(private navService: NavService) { }
 
