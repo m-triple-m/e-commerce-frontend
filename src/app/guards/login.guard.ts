@@ -5,20 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-    if(sessionStorage.getItem('user')){
-      return true;
-    }
-    
-      return false;
-  }
-
-  isLoggedIn(){
-    localStorage.setItem('id', "3456");
+    return true;
   }
   
 }

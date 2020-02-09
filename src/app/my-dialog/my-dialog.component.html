@@ -1,33 +1,5 @@
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <button class="btn btn-primary ml-auto">Invite User</button>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="input-group col-md-2 ml-auto">
-                <input class="form-control">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary"><fa-icon [icon] ="search"></fa-icon></button>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <div class="card">
+        <div class="card-body"></div>
     </div>
 </div>
-<div class="container mt-5">
-    <div class="card ml-auto">
-        <div class="card-body">
-            <div class="listing" *ngFor="let user of users">
-                <div class="row item">
-                    <div class="col-md-3"><img [src]="getImg(user.avatar)" class="img-fluid" width="50px"></div>
-                    <div class="col-md-3">{{user.name}}</div>
-                    <div class="col-md-3">{{user.username}}</div>
-                    <div class="col-md-3">{{user.email}}</div>
-                </div>
-                <hr>
-            </div>
-        </div>
-    </div>
-</div>
-
-<button class="btn btn-primary btn-block" (click)="openDialog()">???</button>

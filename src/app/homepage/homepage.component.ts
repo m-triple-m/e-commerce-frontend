@@ -14,15 +14,12 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.getUserDetails();
-    
-    this.userService.getImage(this.currentUser.avatar).subscribe((url) => {
-      this.avatar = url;
-    })
+    console.log(this.currentUser);
     
   }
 
   getUserDetails(){
-    this.currentUser = this.userService.getCurrentUser();
+    this.currentUser = JSON.parse(sessionStorage.getItem('user'));
   }
 
   

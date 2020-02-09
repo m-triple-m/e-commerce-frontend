@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
-import { CustomeValidator } from '../CustomValidators';
-import { group } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +18,7 @@ export class RegisterComponent implements OnInit {
   imgURL;
   dimgURL;
   showpassword = "text";
-  constructor(private formBuilder : FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder : FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -65,7 +64,9 @@ export class RegisterComponent implements OnInit {
     formdata.avatar = this.avatarName;
     this.userService.addUser(formdata).subscribe( data => {
       console.log(data.message);
+      this.router.navigate(['/login'])
     });
+    
   }
 
   onFileChanged(event){
