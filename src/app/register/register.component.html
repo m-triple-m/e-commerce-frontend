@@ -35,22 +35,48 @@
                                     <!-- <p matSuffix>@gmail.com</p> -->
                                     <mat-error></mat-error>
                                 </mat-form-field>
+
+                                <mat-form-field id="fullw" appearance="outline"  style="font-size: small;" class="col-md-10">
+                                    <mat-label>Country</mat-label>
+                                    <input type="text"
+                                           placeholder="Country"
+                                           matInput
+                                           formControlName="country"
+                                           [matAutocomplete]="count">
+                                    <mat-autocomplete #count="matAutocomplete">
+                                      <mat-option [value]="'India'">
+                                        India
+                                      </mat-option>
+                                    
+                                    <mat-option [value]="'UK'">
+                                        UK
+                                      </mat-option>
+                                    
+                                    <mat-option [value]="'Britain'">
+                                        Britain
+                                      </mat-option>
+
+                                      <mat-option [value]="'US'">
+                                        US
+                                      </mat-option>
+                                    </mat-autocomplete>
+                                  </mat-form-field>
         
                                 <mat-form-field id="firstl" appearance="outline"  style="font-size: small;" class="col-md-5">
                                     <mat-label>Password</mat-label>
-                                    <input matInput placeholder="*******" formControlName="password" type="password">
+                                    <input matInput placeholder="*******" formControlName="password" type="{{passtype}}">
                                     <!-- <p matSuffix>@gmail.com</p> -->
                                     <mat-error *ngIf="getControl('password').errors">Invalid Password</mat-error>
                                 </mat-form-field>
         
                                 <mat-form-field appearance="outline"  style="font-size: small;" class="col-md-5">
                                     <mat-label>Confirm Password</mat-label>
-                                    <input matInput placeholder="*******" formControlName="confirm" type="password">
+                                    <input matInput placeholder="*******" formControlName="confirm" type="{{passtype}}">
                                     <!-- <p matSuffix>@gmail.com</p> -->
                                     <mat-hint>Use</mat-hint>
                                     <mat-error *ngIf="getControl('confirm')">Password do not match</mat-error>
                                 </mat-form-field>
-                                <mat-icon (click)="toggleVis()">visibility</mat-icon>
+                                <fa-icon [icon]="passicon" class="h4" (click)="toggleVis()"></fa-icon>
         
                                 <div class="mt-4 row">
                                     <a mat-button color="primary" [routerLink]="['/login']" routerLinkActive="router-link-active" >Sign In Instead</a>

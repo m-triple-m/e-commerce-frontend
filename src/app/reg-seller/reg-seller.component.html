@@ -1,0 +1,82 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6"></div>
+        <div class="col-md-5">
+            <div class="col-md">
+                <p class="title-1">New Seller Account</p>
+                <p class="title-5">Its so simple</p>
+                <hr>
+            </div>
+            <form [formGroup]="sellerform" (submit)="sellerSubmit(sellerform.value)">
+                <mat-form-field appearance="outline" class="col-md-10 field">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                    <!-- <fa-icon [icon]="icons.user" matSuffix style="" class="icon-size"></fa-icon> -->
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().name.errors">Name is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-10 field">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username">
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().username.errors">Username is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-5 field">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" [type]="phide ? 'password' : 'text'">
+                    <mat-hint></mat-hint>
+                    <p mat-icon-button matSuffix (click)="phide = !phide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="phide">
+                        <mat-icon>{{phide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </p>
+                    <mat-error *ngIf="getControl().password.errors">Password is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-5 field">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput formControlName="confirm">
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().confirm.errors">Passwords must match</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-5 field">
+                    <mat-label>Country</mat-label>
+                    <input matInput formControlName="country">
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().country.errors">Provide your country of residence</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-5 field">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city">
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().city.errors">Provide your city of residence</mat-error>
+                </mat-form-field>
+
+                <!-- <mat-form-field appearance="outline" class="col-md-10 field">
+                    <mat-label>Password</mat-label>
+                    <input matInput>
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="getControl().city.errors">Provide city of residence</mat-error>
+                </mat-form-field> -->
+
+                <div class="col-md mt-1">
+                    <mat-checkbox color="primary" #agree >
+                        <p class="text-muted small-text">
+                            I agree to our Terms, 
+                            Data Policy and Cookie Policy.
+                             You may receive SMS notifications 
+                             from us and can opt out at any time.
+                        </p>
+                    </mat-checkbox>
+                    
+                    <button mat-raised-button color="primary" class="mt-5 submit-btn">Sign Up</button>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+

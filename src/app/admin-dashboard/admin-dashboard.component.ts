@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NavService } from '../nav.service';
 import { MatSidenav } from '@angular/material/sidenav';
 
+
+import * as CanvasJS from '../../assets/canvasjs.min';
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -17,6 +20,7 @@ export class AdminDashboardComponent implements OnInit {
     this.navService.change.subscribe(toggle => {
       this.drawer.toggle();
     })
+    
   }
 
 }

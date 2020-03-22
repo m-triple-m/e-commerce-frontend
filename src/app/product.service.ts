@@ -14,6 +14,22 @@ export class ProductService {
     return this.http.post(this.url+'/add', formdata);
   }
 
+  addReview(data){
+    return this.http.post('http://localhost:3000/review/add', data);
+  }
+
+  updateReview(id, review){
+    return this.http.post(`http://localhost:3000/review/update/${id}`, review);
+  }
+
+  getAllReviews(product_id){
+    return this.http.get(`http://localhost:3000/review/getbyproduct/${product_id}`);
+  }
+
+  getUserReview(user_id){
+    return this.http.get(`http://localhost:3000/review/getbyuser/${user_id}`);
+  }
+
   updateProduct(formadata, id) : Observable<any>{
     return this.http.put(this.url+`/update/${id}`, formadata);
   }
@@ -41,4 +57,5 @@ export class ProductService {
   downloadImage(name): Observable<any>{
     return this.http.get(this.url+'/getImg/'+name, {responseType : 'blob'});
   }
+
 }

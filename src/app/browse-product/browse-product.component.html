@@ -15,9 +15,9 @@
     </div>
 </div>
 <div class="container mt-5 browser">
-    <div class="card ml-auto">
+    <div class="card ml-auto" >
         <div class="card-body">
-            <div class="listing" *ngFor="let product of products">
+            <div class="listing" *ngFor="let product of products" [routerLink]="['/checkout', product._id]" routerLinkActive="router-link-active" (click)="selectProduct(product._id)">
                 <div class="row item">
                     <div class="col-md-3">{{product.name}}</div>
                     <div class="col-md-3">{{product.price}}</div>

@@ -9,6 +9,13 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { BrowseProductComponent } from './browse-product/browse-product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuard } from './guard/auth.guard';
+import { RegSellerComponent } from './reg-seller/reg-seller.component';
+import { ChoicesComponent } from './choices/choices.component';
+import { PaymentComponent } from './payment/payment.component';
+import { BookingComponent } from './booking/booking.component';
+import { StripePaymentComponent } from './stripe-payment/stripe-payment.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes : Routes = [
   { path : 'view', component : ViewProductComponent},
@@ -17,8 +24,15 @@ const routes : Routes = [
   { path : 'register', component : RegisterComponent},
   { path : 'login', component : LoginComponent},
   { path : 'admin', component : AdminDashboardComponent},
-  { path : 'browse', component : BrowseProductComponent},
-  { path : 'checkout', component : CheckoutComponent},
+  { path : 'browse', component : BrowseProductComponent, canActivate: [AuthGuard]},
+  { path : 'checkout/:id', component : CheckoutComponent},
+  { path : 'seller/register', component : RegSellerComponent},
+  { path : 'choices', component : ChoicesComponent},
+  { path : 'pay', component : PaymentComponent},
+  { path : 'booking', component : BookingComponent},
+  { path : 'stripe', component : StripePaymentComponent},
+  { path : 'detail/:id', component : ProductDetailComponent},
+  { path : 'addproduct', component : AddProductComponent},
 ]
 
 @NgModule({

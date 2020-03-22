@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5">
+    <mat-horizontal-stepper [linear] = "true">
+        <mat-step>
+            <ng-template>Step 1</ng-template>
+            <div class="container">
+                <div class="row">
+                    <mat-card *ngFor="let opt of options, let i = index" (click)="setUsage(i)" [class]="getClass(opt.name)">
+                        <mat-card-content class="card-body">
+                            <p class="display-4">{{opt.name}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template>Step 2</ng-template>
+
+            <div class="container"  *ngIf="usage">
+                <div class="row">
+                    <mat-card *ngFor="let opt of options[usage].options, let i = index" (click)="setUsage(i)" [class]="getClass(opt.name)">
+                        <mat-card-content class="card-body">
+                            <p class="display-4">{{opt.name}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template>Step 3</ng-template>
+        </mat-step>
+
+        <mat-step>
+            <ng-template>Step 4</ng-template>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

@@ -1,10 +1,39 @@
 <div class="container mt-5">
+    <p class="display-4">
+        Checkout
+    </p>
+    <hr>
     <div class="row justify-content-center">
-        <div class="col-md-3 order-md-9">
-            Col3
+        
+        <div class="col-md-5 order-md-7">
+            <mat-card>
+                <mat-card-content class="card-body">
+                    <p class="h4 text-muted mt-3">
+                        Order Details
+                    </p>
+                    <hr>
+                    <div class="row" style="background-color: red;">
+                        <div class="col-md-6">
+                            {{product.name}}
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
         </div>
-        <div class="col-md-9 order-md-3">
-            Col9
+        <div class="col-md-7 order-md-5">
+            <mat-card>
+                <mat-card-content class="card-body">
+                   
+                    <p class="h4 text-muted mt-3">
+                        Shipping Details
+                    </p>
+                    <hr>
+                    <p class="h6"><strong>{{logged_user.name}}</strong></p>
+                    <p class="h6"><strong>{{logged_user.country}}</strong></p>
+                    <p class="h6"><strong>{{logged_user.email}}</strong></p>
+                    
+                </mat-card-content>
+            </mat-card>
         </div>
     </div>
 </div>

@@ -1,0 +1,41 @@
+.fullw{
+    width: 100%;
+}
+
+.halfw-fi{
+    margin-right: 0.5rem;
+}
+/* .halfw{
+    width: 100%;
+} */
+
+.icon-size{
+    font-size: 1.5rem;
+}
+
+.field{
+    font-size: 0.8rem;
+}
+
+.small-text{
+    font-size: 0.7rem;
+    margin: 0px 0px 0px 0px;
+}
+
+.submit-btn{
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 2.5rem;
+}
+
+.title-1{
+    font-size: 2.5rem;
+    font-family: cursive;
+    margin: 0;
+}
+
+.title-5{
+    font-size: 1.7rem;
+    /* font-family: cursive; */
+    margin: 0;
+}

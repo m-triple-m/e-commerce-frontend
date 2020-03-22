@@ -5,7 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule, MatCardModule, MatExpansionModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatExpansionModule, MatAutocompleteModule
+          ,MatStepperModule, MatRippleModule } from '@angular/material';
 import { MatIconModule, MatDialogModule } from '@angular/material';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -31,6 +32,20 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { AddProductComponent } from './add-product/add-product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { WebstatsComponent } from './webstats/webstats.component';
+import { RegSellerComponent } from './reg-seller/reg-seller.component';
+import { ChoicesComponent } from './choices/choices.component';
+import { PaymentComponent } from './payment/payment.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+import { NgxPayPalModule } from 'ngx-paypal';
+import { BookingComponent } from './booking/booking.component';
+import { StripePaymentComponent } from './stripe-payment/stripe-payment.component';
+import { ItemComponent } from './item/item.component';
+import { ItemCountComponent } from './item-count/item-count.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +64,17 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     ProductDetailComponent,
     AddProductComponent,
     CheckoutComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    WebstatsComponent,
+    RegSellerComponent,
+    ChoicesComponent,
+    PaymentComponent,
+    BookingComponent,
+    StripePaymentComponent,
+    ItemComponent,
+    ItemCountComponent,
+    ReviewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,6 +93,12 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     MatIconModule,
     MatExpansionModule,
     MatDialogModule,
+    MatAutocompleteModule,
+    MatStepperModule,
+    NgxPayPalModule,
+    MatRippleModule,
+    NgxStarRatingModule,
+    NgbModule,
     SweetAlert2Module.forRoot(),
   ],
   providers: [],

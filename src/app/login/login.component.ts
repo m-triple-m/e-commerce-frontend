@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { AuthService } from '../auth.service';
+
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   remember_user = true;
   cuser;
   loginForm;
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router, private authService: AuthService) { }
+  constructor(private location: Location, private formBuilder: FormBuilder, private userService: UserService, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.initForm();
@@ -45,7 +47,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('user', JSON.stringify(this.cuser));
         sessionStorage.setItem('avatar', this.cuser.avatar);
         this.authService.login();
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
+        this.location.back();
         return;
       }
       console.log('failed');

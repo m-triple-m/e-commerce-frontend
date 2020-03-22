@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  product;
+  logged_user;
+  constructor(private activatedRoute: ActivatedRoute, private productservice: ProductService) { }
 
   ngOnInit() {
+    
+  }
+
+  ngAfterContentInit(){
+    this.logged_user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(this.logged_user);
+    this.productservice.getProductById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe((product_data) => {
+      this.product = product_data;
+      console.log(this.product);
+    })
   }
 
 }

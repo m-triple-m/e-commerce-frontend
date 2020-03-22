@@ -33,7 +33,9 @@ export class UserService {
   }
 
   getUserById(id) : Observable<any>{
-    return this.http.get(this.url+`/user/getbyid/${id}`);
+    return this.http.get(this.
+      
+      url+`/user/getbyid/${id}`);
   }
 
   getUserByUsername(username) : Observable<any>{

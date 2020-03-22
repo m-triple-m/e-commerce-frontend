@@ -6,3 +6,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 button:focus{
     outline: none;
 }
+
+.bg-sl{
+    background-image: url('assets/new_back.svg'),
+    linear-gradient(to right, rgba(255, 198, 198, 0.815), rgba(255, 198, 198, 0.815));
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    /* background-size: 80%; */
+}

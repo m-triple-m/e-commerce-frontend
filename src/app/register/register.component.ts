@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -18,14 +19,24 @@ export class RegisterComponent implements OnInit {
   imgURL;
   dimgURL;
   showpassword = "text";
+  passicon = faEye;
+  passtype="password";
   constructor(private formBuilder : FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.initForm();
+    console.log(new Date());
   }
 
   toggleVis(){
-    
+  if(this.passtype == "password"){
+    this.passtype = "text";
+    this.passicon = faEyeSlash;
+  }
+    else{
+      this.passtype = "password";
+      this.passicon = faEye;
+    }
   }
 
   initForm(){
@@ -35,7 +46,9 @@ export class RegisterComponent implements OnInit {
       email : ['', [Validators.required, Validators.email]],
       password : ['', Validators.required],
       confirm : ['', Validators.required],
-      avatar : ''
+      country : ['', Validators.required],
+      avatar : '',
+      created : new Date(2020, 2, 10)
     })
   }
 
