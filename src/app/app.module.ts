@@ -46,6 +46,7 @@ import { StripePaymentComponent } from './stripe-payment/stripe-payment.componen
 import { ItemComponent } from './item/item.component';
 import { ItemCountComponent } from './item-count/item-count.component';
 import { ReviewComponent } from './review/review.component';
+import { AddDescriptionComponent } from './add-description/add-description.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ReviewComponent } from './review/review.component';
     ItemComponent,
     ItemCountComponent,
     ReviewComponent,
+    AddDescriptionComponent,
 
   ],
   imports: [

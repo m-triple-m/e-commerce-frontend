@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
 
+import { faBoxOpen, faRupeeSign, faTrashAlt, faDice } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -16,6 +18,13 @@ export class AddProductComponent implements OnInit {
   message: string;
   avatarName: any;
   imagePath: any;
+  description = [];
+
+  delete = faTrashAlt;
+  box = faBoxOpen;
+  dice = faDice;
+  money = faRupeeSign;
+
   constructor(private formBuilder: FormBuilder, private productService: ProductService) { }
 
   ngOnInit() {
@@ -26,12 +35,17 @@ export class AddProductComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       name : ['', Validators.required],
       price : ['', Validators.required],
-      category : ['', Validators.required],
+      category : ['', Validators.required]
     })
   }
 
   formSubmit(formdata){
+    if(this.productForm.invalid){
+      alert('invalid form')
+      return;
+    }
     formdata.image = this.prodImg;
+    formdata.description = this.description;
     this.productService.addProduct(formdata).subscribe(response => {
       console.log(response.message);
     })
@@ -47,6 +61,15 @@ export class AddProductComponent implements OnInit {
       console.log(response.message);
       
     });
+  }
+
+  addDescription(){
+    this.description.push(['', '']);
+    console.log(this.description);
+  }
+
+  removeDescription(index){
+    this.description.splice(index, 1);
   }
 
   preview(files) {
@@ -65,6 +88,10 @@ export class AddProductComponent implements OnInit {
     reader.onload = (_event) => { 
       this.imgURL = reader.result;
     }
+  }
+
+  getControl(){
+    return this.productForm.controls;
   }
 
 }

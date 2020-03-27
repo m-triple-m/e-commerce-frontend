@@ -1,28 +1,59 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form [formGroup]="productForm" (submit) = "formSubmit(productForm.value)">
-                <div class="card">
-                    <div class="card-header bg-dark">
-                        <p class="h4 text-center text-light">Add new Product</p>
-                    </div>
-                    <div class="card-body">
-                        <input type="file" (change)="onFileChanged($event)" #fileInput>
+        <div class="col-md">
+                <mat-card>
+                    <mat-card-content class="card-body">
+                        <p class="h4 text-center">Enter Product Details</p>
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col-md-6" style="border-right: 1px solid rgb(228, 228, 228);">
+                                <form [formGroup]="productForm" (submit) = "formSubmit(productForm.value)">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Name" formControlName="name">
+                                        <fa-icon [icon]="box" matSuffix></fa-icon>
+                                        <mat-error *ngIf="getControl().name.error">Name required</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Price" formControlName="price" type="number">
+                                        <fa-icon [icon]="money" matSuffix></fa-icon>
+                                        <mat-error *ngIf="getControl().price.error">Price required</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Category" formControlName="category">
+                                        <fa-icon [icon]="dice" matSuffix></fa-icon>
+                                        <mat-error *ngIf="getControl().category.error">Category required</mat-error>
+                                    </mat-form-field>
+                                    
+                                    <button mat-raised-button color="primary" class="mt-5 btn-block">Add Product</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="file" (change)="onFileChanged($event)" #fileInput>
+                                <div class="text-center">
+                                    <img [src]="imgURL" class="img-fluid" style="height: 15rem;">
+                                </div>
+                            </div>
+                        </div>
                         
-                        <mat-form-field>
-                            <input matInput placeholder="Name" formControlName="name">
-                        </mat-form-field>
-                        <mat-form-field>
-                            <input matInput placeholder="Price" formControlName="price" type="number">
-                        </mat-form-field>
-                        <mat-form-field>
-                            <input matInput placeholder="Category" formControlName="category">
-                        </mat-form-field>
-                        
-                        <button class="btn btn-outline-primary mt-5 btn-block">Sign Up</button>
-                    </div>
-                </div>
-            </form>
+                        <p class="h6 text-muted mt-5">Provide Description</p>
+                        <hr>
+                        <div class="row mt-5" *ngFor="let desc of description;let i = index">
+                            <div class="col-md-4">
+                                <input class = "form-control" [(ngModel)] = "desc[0]">
+                            </div>
+                            <div class="col-md-4">
+                                <input class = "form-control" [(ngModel)] = "desc[1]">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-danger btn-block" (click)="removeDescription(i)" >
+                                    <fa-icon [icon]="delete" matSuffix></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-5" (click)="addDescription()">Add Description</button>
+                    </mat-card-content>
+                </mat-card>
         </div>
     </div>
 </div>
