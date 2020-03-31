@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
   showpassword = "text";
   passicon = faEye;
   passtype="password";
+  hide = true;
   constructor(private formBuilder : FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
@@ -113,9 +114,9 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  getControl(name){
+  returnControls(){
     // console.log(this.registerForm.controls[name])
-    return this.registerForm.controls[name];
+    return this.registerForm.controls;
   }
 
 }
