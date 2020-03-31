@@ -21,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
 
     let id = this.activated.snapshot.paramMap.get('id');
+
     this.productservice.getProductById(id).subscribe(data => {
       this.currentUser = JSON.parse(sessionStorage.getItem('user'));
       console.log(data);
@@ -28,8 +29,6 @@ export class ProductDetailComponent implements OnInit {
       this.getReviews();
       this.getUserReview();
     })
-
-    
   }
 
   addReview(formdata){

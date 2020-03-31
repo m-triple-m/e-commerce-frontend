@@ -1,3 +1,28 @@
+<div class="container" *ngIf="product">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="'http://localhost:3000/'+product.image" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <mat-card>
+                <mat-card-content class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p class="display-4">{{product.name}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="display-4"><strong>{{product.price}}</strong></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="h4">{{product.category}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
 <div class="container mt-5" *ngIf="product">
     <div class="card">
         <div class="card-body">
@@ -12,6 +37,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+
     <div class="card mt-3" *ngIf="currentUser">
         <div class="card-body">
             <div *ngFor = "let review of reviews">
