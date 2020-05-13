@@ -47,6 +47,10 @@ import { ItemComponent } from './item/item.component';
 import { ItemCountComponent } from './item-count/item-count.component';
 import { ReviewComponent } from './review/review.component';
 import { AddDescriptionComponent } from './add-description/add-description.component';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
+import { AngularStripeComponent } from './angular-stripe/angular-stripe.component';
+import { StripeModule } from "stripe-angular";
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 
 @NgModule({
   declarations: [
@@ -76,6 +80,9 @@ import { AddDescriptionComponent } from './add-description/add-description.compo
     ItemCountComponent,
     ReviewComponent,
     AddDescriptionComponent,
+    ManageAddressComponent,
+    AngularStripeComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [
@@ -102,6 +109,7 @@ import { AddDescriptionComponent } from './add-description/add-description.compo
     NgxStarRatingModule,
     NgbModule,
     SweetAlert2Module.forRoot(),
+    StripeModule.forRoot("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1"),
   ],
   providers: [],
   bootstrap: [AppComponent],

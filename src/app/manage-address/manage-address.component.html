@@ -1,0 +1,21 @@
+<div class="container">
+    <p class="display-4 text-center">
+        Manage Your Addresses
+    </p>
+    <hr>
+
+    <mat-card class="mt-5" *ngFor="let add of user.address">
+        <mat-card-content class="card-body">
+            <p>State : {{add.state}}</p>
+            <p>City : {{add.city}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mt-5">
+        <mat-card-content>
+            <p class="h1 text-center mt-5">Add New Address</p>
+            <hr>
+            
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,28 @@ export class UserService {
 
   getCurrentUser(){
     return this.currentUser;
+  }
+
+  changePassword(id,password){
+    return this.http.put(this.url+`/user/changepassword/${id}`, {password : password})
+    //backend code
+
+    // Router.put("/changepassword/:id", (req, res) => {
+      // let id = req.params.id;
+      // let data = req.body;
+      // Model.findbyIdandUpdate(id, data)
+      // .then((data)=>{
+      //     res.status(200).json(data);
+      // })
+      // .catch((err)=>{
+      //     res.status(500).send(err.message);
+      // })
+    // })
+
+  }
+
+  getUserByEmail(email){
+    return this.http.get(this.url+'/getbyemail/'+email);
   }
 
   setCurrentUser(user){

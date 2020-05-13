@@ -16,6 +16,8 @@ import { BookingComponent } from './booking/booking.component';
 import { StripePaymentComponent } from './stripe-payment/stripe-payment.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { AngularStripeComponent } from './angular-stripe/angular-stripe.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes : Routes = [
   { path : 'view', component : ViewProductComponent},
@@ -33,6 +35,8 @@ const routes : Routes = [
   { path : 'stripe', component : StripePaymentComponent},
   { path : 'detail/:id', component : ProductDetailComponent},
   { path : 'addproduct', component : AddProductComponent},
+  { path : 'justdoit', component : AngularStripeComponent},
+  { path : 'forgot', component : ForgotPasswordComponent},
 ]
 
 @NgModule({
